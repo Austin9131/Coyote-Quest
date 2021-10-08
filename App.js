@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { StyleSheet, Button, Image, Text, View, Alert} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-export const AuthContext = createContex({
+export const AuthContext = createContext ({
   hasUser: false,
   setUser: () => {},
 });
@@ -14,7 +14,13 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}/>
+      <View style={styles.header}>
+      <Button
+        title='login'
+        color='#fff'
+        onPress = {() => setUser(true)}
+      />
+      </View>
     </View>
   );
 };
@@ -27,9 +33,13 @@ const MainScreen = () => {
       <View style={styles.header}>
         <Button
         title='logout'
+        color='#fff'
         onPress = {() => setUser(false)}
         />
       </View>
+      <text>
+        Map Goes Here
+      </text>
     </View>
   );
 };
@@ -40,7 +50,7 @@ export const AppNavigator = () => {
   const { hasUser } = useContext(AuthContext);
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       { hasUser ?
         <Stack.Screen name='Main' component={MainScreen} /> :
         <Stack.Screen name='Login' component={LoginScreen} /> 
@@ -77,9 +87,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   menu: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
     width: '7.5%',
     height: '7.5%',
     backgroundColor: '#0065BD',
