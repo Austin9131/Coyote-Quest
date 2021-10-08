@@ -37,9 +37,11 @@ const MainScreen = () => {
         onPress = {() => setUser(false)}
         />
       </View>
-      <text>
-        Map Goes Here
-      </text>
+      <View style={styles.body}>
+        <Text style={styles.titleText}>
+          Map Goes Here
+        </Text>
+      </View>
     </View>
   );
 };
@@ -90,5 +92,13 @@ const styles = StyleSheet.create({
     width: '7.5%',
     height: '7.5%',
     backgroundColor: '#0065BD',
+  },
+  titleText: {
+    fontSize: 20,
+  },
+  body: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
