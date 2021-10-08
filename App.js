@@ -1,21 +1,87 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext } from 'react';
+import { StyleSheet, Button, Image, Text, View, Alert} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+export const AuthContext = createContex({
+  hasUser: false,
+  setUser: () => {},
+});
+
+const LoginScreen = () => {
+  const { setUser } =useContext(AuthContext);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.header}/>
     </View>
   );
-}
+};
+
+const MainScreen = () => {
+  const { setUser } = useContext(AuthContext);
+
+  return(
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Button
+        title='logout'
+        onPress = {() => setUser(false)}
+        />
+      </View>
+    </View>
+  );
+};
+
+const Stack = createStackNavigator();
+
+export const AppNavigator = () => {
+  const { hasUser } = useContext(AuthContext);
+
+  return (
+    <Stack.Navigator>
+      { hasUser ?
+        <Stack.Screen name='Main' component={MainScreen} /> :
+        <Stack.Screen name='Login' component={LoginScreen} /> 
+      }
+    </Stack.Navigator>
+  )
+};
+
+const App = () => {
+  const [hasUser, setUser] = useState(false);
+
+  return (
+    <AuthContext.Provider value={{ hasUser, setUser }}>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+    </AuthContext.Provider>
+  );
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  header: {
+    width: '100%',
+    height: '10%',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    backgroundColor: '#0065BD',
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  menu: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    width: '7.5%',
+    height: '7.5%',
+    backgroundColor: '#0065BD',
   },
 });
