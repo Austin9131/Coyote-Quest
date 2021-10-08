@@ -55,7 +55,7 @@ export const AppNavigator = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       { hasUser ?
         <Stack.Screen name='Main' component={MainScreen} /> :
-        <Stack.Screen name='Login' component={LoginScreen} /> 
+        <Stack.Screen name='Login' component={LoginScreen}/> 
       }
     </Stack.Navigator>
   )
