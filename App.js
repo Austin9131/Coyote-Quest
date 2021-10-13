@@ -1,75 +1,113 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { createContext, useContext, useState } from 'react';
-import { StyleSheet, Button, Image, Text, View, Alert} from 'react-native';
+import { StyleSheet, Button, Image, Text, TextInput, Pressable,  View, Alert } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-export const AuthContext = createContext ({
-  hasUser: false,
-  setUser: () => {},
-});
+export const AuthContext = createContext ({ hasUser: false, setUser: () => {} });
 
-const LoginScreen = () => {
-  const { setUser } =useContext(AuthContext);
+const Stack = createStackNavigator();
+
+
+const LoginScreen = ({ navigation }) => {
+  const [ username, setUsername ] = useState('');
+  const [ password, setPassword ] = useState('');
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-      <Button
-        title='login'
-        color='#fff'
-        onPress = {() => setUser(true)}
-      />
+        <Pressable style={styles.headerButton} onPress={() => navigation.navigate('Main')}>
+          <Text style={styles.titleText}>
+            Back
+          </Text>
+        </Pressable>
+      </View>
+      <View style={styles.body}>
+        <Image style={styles.loginImage} source={require('./assets/ic_launcher_foreground.png')}/>
+        <TextInput
+          style = {styles.input}
+          autoCapitalize='none'
+          onChangeText={(username) => setUsername(username)}
+          placeholder='username'
+        />
+        <TextInput
+          style = {styles.input}
+          autoCapitalize='none'
+          onChangeText={(password) => setPassword(password)}
+          placeholder='password'
+        />
+
+        <Pressable style={styles.bodyButton} onPress={() => {username === 'admin' && password === 'admin'? navigation.navigate('Authorized')
+          : Alert.alert(
+            'Error', 'Invalid User Login',
+            [
+              {
+                text: 'Cancel',
+                onPress: () => navigation.navigate('Main')
+              },
+              {
+                text: 'Try Again'
+              }
+            ]
+          )}}>
+          <Text style={styles.titleText}>Login</Text>
+        </Pressable>
       </View>
     </View>
   );
 };
 
-const MainScreen = () => {
+const MainScreen = ({ navigation }) => {
+  return(
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Pressable style={styles.headerButton} onPress = {() => navigation.navigate('Login')}>
+          <Image style={styles.profileIcon} source={require('./assets/login.png')}/>
+        </Pressable>
+      </View>
+        <View style={styles.body}>
+          <Text style={styles.mainText}>
+            Map Goes Here
+          </Text>
+        </View>
+    </View>
+  );
+};
+
+const AuthMainScreen = ({ navigation }) => {
   const { setUser } = useContext(AuthContext);
 
   return(
     <View style={styles.container}>
       <View style={styles.header}>
-        <Button
-        title='logout'
-        color='#fff'
-        onPress = {() => setUser(false)}
-        />
-      </View>
-      <View style={styles.body}>
-        <Text style={styles.titleText}>
-          Map Goes Here
-        </Text>
+        <Pressable style={styles.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
+          <Text style={styles.titleText}>
+            Logout
+          </Text>
+        </Pressable>
       </View>
     </View>
   );
 };
 
-const Stack = createStackNavigator();
-
 export const AppNavigator = () => {
   const { hasUser } = useContext(AuthContext);
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      { hasUser ?
-        <Stack.Screen name='Main' component={MainScreen} /> :
-        <Stack.Screen name='Login' component={LoginScreen}/> 
-      }
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name='Main' component={MainScreen} />
+        <Stack.Screen name='Login' component={LoginScreen}/>
+        <Stack.Screen name='Authorized' component={AuthMainScreen}/>
     </Stack.Navigator>
-  )
+  );
 };
 
 const App = () => {
-  const [hasUser, setUser] = useState(false);
 
   return (
-    <AuthContext.Provider value={{ hasUser, setUser }}>
-      <NavigationContainer>
-        <AppNavigator />
-      </NavigationContainer>
-    </AuthContext.Provider>
+    <NavigationContainer>
+      <AppNavigator/>
+    </NavigationContainer>
   );
 };
 
@@ -83,22 +121,59 @@ const styles = StyleSheet.create({
   header: {
     width: '100%',
     height: '10%',
+    backgroundColor: '#0065BD',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    backgroundColor: '#0065BD',
-    alignItems: 'center',
+    alignItems: 'flex-end',
   },
-  menu: {
-    width: '7.5%',
-    height: '7.5%',
+  profileIcon: {
+    width: 35,
+    height: 35,
+    borderRadius: 5,
+  },
+  headerButton: {
+    width: 45,
+    height: 35,
+    marginLeft: 10,
+    marginBottom: 10,
     backgroundColor: '#0065BD',
+  },
+  headerButtonDouble: {
+    width: 70,
+    height: 35,
+    marginLeft: 10,
+    marginBottom: 10,
+    backgroundColor: '#0065BD',
+  },
+  bodyButton: {
+    width: 100,
+    height: 30,
+    borderRadius: 5,
+    backgroundColor: '#0065BD',
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
+  input: {
+    height: 40,
+    width: 240,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
   titleText: {
     fontSize: 20,
+    color: '#fff',
+  },
+  loginImage: {
+    height: 200,
+    width: 200,
+  },
+  mainText: {
+    fontSize: 30,
   },
   body: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
 });
