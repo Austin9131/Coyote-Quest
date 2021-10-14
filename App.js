@@ -16,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Pressable style={styles.headerButton} onPress={() => navigation.navigate('Main')}>
+        <Pressable style={styles.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
           <Text style={styles.titleText}>
             Back
           </Text>
@@ -27,17 +27,19 @@ const LoginScreen = ({ navigation }) => {
         <TextInput
           style = {styles.input}
           autoCapitalize='none'
+          autoCorrect= {false}
           onChangeText={(username) => setUsername(username)}
           placeholder='username'
         />
         <TextInput
           style = {styles.input}
           autoCapitalize='none'
+          autoCorrect= {false}
           onChangeText={(password) => setPassword(password)}
           placeholder='password'
         />
 
-        <Pressable style={styles.bodyButton} onPress={() => {username === 'admin' && password === 'admin'? navigation.navigate('Authorized')
+        <Pressable style={styles.bodyButton} onPress={() => {username === 'mtxlogin' && password === 'mtxlogin'? navigation.navigate('Authorized')
           : Alert.alert(
             'Error', 'Invalid User Login',
             [
@@ -61,7 +63,7 @@ const MainScreen = ({ navigation }) => {
   return(
     <View style={styles.container}>
       <View style={styles.header}>
-        <Pressable style={styles.headerButton} onPress = {() => navigation.navigate('Login')}>
+        <Pressable style={styles.headerButtonDouble} onPress = {() => navigation.navigate('Login')}>
           <Image style={styles.profileIcon} source={require('./assets/login.png')}/>
         </Pressable>
       </View>
@@ -85,6 +87,11 @@ const AuthMainScreen = ({ navigation }) => {
             Logout
           </Text>
         </Pressable>
+      </View>
+      <View style={styles.body}>
+        <Text style={styles.mainText}>
+            Admin Map Goes Here
+        </Text>
       </View>
     </View>
   );
@@ -127,8 +134,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   profileIcon: {
-    width: 35,
-    height: 35,
+    width: 30,
+    height: 30,
     borderRadius: 5,
   },
   headerButton: {
