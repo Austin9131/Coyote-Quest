@@ -16,10 +16,11 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Pressable style={styles.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
-          <Text style={styles.titleText}>
-            Back
-          </Text>
+        <Pressable style={styles.backButton} onPress={() => navigation.navigate('Main')}>
+            <Image style={styles.backIcon} source={require('./assets/backarrow.png')}/>
+            <Text style={styles.backText}>
+             Back
+            </Text>
         </Pressable>
       </View>
       <View style={styles.body}>
@@ -133,20 +134,32 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
   },
-  profileIcon: {
+  backIcon: {
+    flex: 1,
+    height: 17.5,
+    width: 10,
+  },
+  backText: {
+    flex: 2,
+    fontSize: 20,
+    color: '#fff', 
+  },
+  profileIcon:{
     width: 30,
     height: 30,
     borderRadius: 5,
   },
-  headerButton: {
-    width: 45,
+  backButton: {
+    width: 120,
     height: 35,
     marginLeft: 10,
     marginBottom: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
     backgroundColor: '#0065BD',
   },
   headerButtonDouble: {
-    width: 70,
+    width: 120,
     height: 35,
     marginLeft: 10,
     marginBottom: 10,
