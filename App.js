@@ -53,7 +53,7 @@ const LoginScreen = ({ navigation }) => {
               }
             ]
           )}}>
-          <Text style={styles.titleText}>Login</Text>
+          <Text style={styles.titleText}>Login Here</Text>
         </Pressable>
       </View>
     </View>
