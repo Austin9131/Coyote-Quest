@@ -17,10 +17,9 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Pressable style={styles.backButton} onPress={() => navigation.navigate('Main')}>
-            <Image style={styles.backIcon} source={require('./assets/backarrow.png')}/>
-            <Text style={styles.backText}>
+          <Text style={styles.backText}>
              Back
-            </Text>
+          </Text>
         </Pressable>
       </View>
       <View style={styles.body}>
@@ -136,11 +135,12 @@ const styles = StyleSheet.create({
   },
   backIcon: {
     flex: 1,
-    height: 17.5,
-    width: 10,
+    height: 10,
+    width: 5,
   },
   backText: {
     flex: 2,
+    height: 20,
     fontSize: 20,
     color: '#fff', 
   },
