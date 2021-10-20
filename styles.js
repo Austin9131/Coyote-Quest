@@ -31,6 +31,14 @@ const buttons = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#0065BD',
     }
+    bodyButton: {
+        width: 100,
+        height: 30,
+        borderRadius: 5,
+        backgroundColor: '#0065BD',
+        alignItems: 'center', 
+        justifyContent: 'center',
+      }
 })
 
 export { stylesTest, buttons }
