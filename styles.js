@@ -30,7 +30,7 @@ const buttons = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     backgroundColor: '#0065BD',
-    }
+    },
     bodyButton: {
         width: 100,
         height: 30,
