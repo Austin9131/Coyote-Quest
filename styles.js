@@ -1,8 +1,4 @@
-import styled from 'styled-components';
-import {View} from 'react-native';
-import Constants from 'expo-constants';
-
-
+import {View, StyleSheet} from 'react-native';
 
 //colors
 export const Colors = {
@@ -16,6 +12,25 @@ green: '#10B981',
 red: '#EF4444',
 };
 
-const{ primary, secondary, tertiary, darklight, brand, green, red } = Colors;
+const{ primary, secondary, tertiary, darklight, brand, green, red } = Colors
 
-//Styles go here
+const stylesTest = StyleSheet.create({
+    container: {
+        backgroundColor: '#fff',
+        flex: 1,
+    }
+})
+
+const buttons = StyleSheet.create({
+    back: {
+    width: 120,
+    height: 35,
+    marginLeft: 10,
+    marginBottom: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: '#0065BD',
+    }
+})
+
+export { stylesTest, buttons }

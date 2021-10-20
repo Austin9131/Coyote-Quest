@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 import { StyleSheet, Button, Image, Text, TextInput, Pressable,  View, Alert } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { stylesTest, buttons } from './styles'
 
 export const AuthContext = createContext ({ hasUser: false, setUser: () => {} });
 
@@ -14,9 +15,9 @@ const LoginScreen = ({ navigation }) => {
   const [ password, setPassword ] = useState('');
 
   return (
-    <View style={styles.container}>
+    <View style={stylesTest.container}>
       <View style={styles.header}>
-        <Pressable style={styles.backButton} onPress={() => navigation.navigate('Main')}>
+        <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
           <Text style={styles.backText}>
              Back
           </Text>
@@ -61,7 +62,7 @@ const LoginScreen = ({ navigation }) => {
 
 const MainScreen = ({ navigation }) => {
   return(
-    <View style={styles.container}>
+    <View style={stylesTest.container}>
       <View style={styles.header}>
         <Pressable style={styles.headerButtonDouble} onPress = {() => navigation.navigate('Login')}>
           <Image style={styles.profileIcon} source={require('./assets/login.png')}/>
@@ -80,7 +81,7 @@ const AuthMainScreen = ({ navigation }) => {
   const { setUser } = useContext(AuthContext);
 
   return(
-    <View style={styles.container}>
+    <View style={stylesTest.container}>
       <View style={styles.header}>
         <Pressable style={styles.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
           <Text style={styles.titleText}>
@@ -121,10 +122,10 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: {
+  /*container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
+  }, */
   header: {
     width: '100%',
     height: '10%',
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 5,
   },
-  backButton: {
+/*  backButton: {
     width: 120,
     height: 35,
     marginLeft: 10,
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     backgroundColor: '#0065BD',
-  },
+  },*/
   headerButtonDouble: {
     width: 120,
     height: 35,
