@@ -16,5 +16,6 @@ green: '#10B981',
 red: '#EF4444',
 };
 
-const{ primary, secondary, tertiary, darklight, brand, green,red } = Colors;
+const{ primary, secondary, tertiary, darklight, brand, green, red } = Colors;
 
+//Styles go here
