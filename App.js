@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import MapView from 'react-native-maps';
 import * as React from 'react';
 import { createContext, useContext, useState } from 'react';
-import { StyleSheet, Button, Image, Text, TextInput, Pressable, View, Alert, Dimensions } from 'react-native';
+import { Image, Text, TextInput, Pressable, View, Alert } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { stylesTest, buttons, styleText, styleicon } from './styles'
+import { buttons, icon, maps, styles, text  } from './styles';
 
 export const AuthContext = createContext ({ hasUser: false, setUser: () => {} });
 
@@ -17,25 +17,25 @@ const LoginScreen = ({ navigation }) => {
   const [ password, setPassword ] = useState('');
 
   return (
-    <View style={stylesTest.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
-          <Text style={styleText.backText}>
+          <Text style={text.backText}>
              Back
           </Text>
         </Pressable>
       </View>
       <View style={styles.body}>
-        <Image style={styleicon.loginIcon} source={require('./assets/ic_launcher_foreground.png')}/>
+        <Image style={icon.loginIcon} source={require('./assets/ic_launcher_foreground.png')}/>
         <TextInput
-          style = {styles.input}
+          style = {text.input}
           autoCapitalize='none'
           autoCorrect= {false}
           onChangeText={(username) => setUsername(username)}
           placeholder='username'
         />
         <TextInput
-          style = {styles.input}
+          style = {text.input}
           autoCapitalize='none'
           autoCorrect= {false}
           onChangeText={(password) => setPassword(password)}
@@ -55,7 +55,7 @@ const LoginScreen = ({ navigation }) => {
               }
             ]
           )}}>
-          <Text style={styleText.titleText}>Login</Text>
+          <Text style={text.titleText}>Login</Text>
         </Pressable>
       </View>
     </View>
@@ -64,14 +64,14 @@ const LoginScreen = ({ navigation }) => {
 
 const MainScreen = ({ navigation }) => {
   return(
-    <View style={stylesTest.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <Pressable style={buttons.headerButtonDouble} onPress = {() => navigation.navigate('Login')}>
-          <Image style={styleicon.profileIcon} source={require('./assets/login.png')}/>
+          <Image style={icon.profileIcon} source={require('./assets/login.png')}/>
         </Pressable>
       </View>
         <View style={styles.body}>
-          <MapView style={styles.map} initialRegion={{
+          <MapView style={maps.main} initialRegion={{
               latitude: 34.181358,
               longitude: -117.322,
               latitudeDelta: 0.005,
@@ -86,16 +86,16 @@ const AuthMainScreen = ({ navigation }) => {
   const { setUser } = useContext(AuthContext);
 
   return(
-    <View style={stylesTest.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <Pressable style={buttons.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
-          <Text style={styleText.titleText}>
+          <Text style={text.titleText}>
             Logout
           </Text>
         </Pressable>
       </View>
       <View style={styles.body}>
-        <MapView style={styles.map} 
+        <MapView style={maps.main} 
             initialRegion={{
               latitude: 34.181358,
               longitude: -117.322,
@@ -131,11 +131,11 @@ const App = () => {
 
 export default App;
 
-const styles = StyleSheet.create({
-  /*container: {
+/*const styles = StyleSheet.create({
+  container: {
     flex: 1,
     backgroundColor: '#fff',
-  }, */
+  }, 
   header: {
     width: '100%',
     height: '10%',
@@ -144,23 +144,23 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
   },
-  /*backIcon: {
+  backIcon: {
     flex: 1,
     height: 10,
     width: 5,
-  },*/
-  /*backText: {
+  },
+  backText: {
     flex: 2,
     height: 20,
     fontSize: 20,
     color: '#fff', 
-  },*/
-  /*profileIcon:{
+  },
+  profileIcon:{
     width: 30,
     height: 30,
     borderRadius: 5,
-  },*/
-/*  backButton: {
+  },
+  backButton: {
     width: 120,
     height: 35,
     marginLeft: 10,
@@ -168,23 +168,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     backgroundColor: '#0065BD',
-  },*/
-  /* headerButtonDouble: {
+  },
+  headerButtonDouble: {
     width: 120,
     height: 35,
     marginLeft: 10,
     marginBottom: 10,
     backgroundColor: '#0065BD',
   },
-  */
-  /*bodyButton: {
+  
+  bodyButton: {
     width: 100,
     height: 30,
     borderRadius: 5,
     backgroundColor: '#0065BD',
     alignItems: 'center', 
     justifyContent: 'center',
-  },*/
+  },
   input: {
     height: 40,
     width: 240,
@@ -192,17 +192,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
-  /*titleText: {
+  titleText: {
     fontSize: 20,
     color: '#fff',
-  },*/
-  /*loginIcon: {
+  },
+  loginIcon: {
     height: 200,
     width: 200,
-  },*/
-  /*mainText: {
+  },
+  mainText: {
     fontSize: 30,
-  },*/
+  },
   body: {
     flex: 1,
     justifyContent: 'flex-start',
@@ -212,4 +212,4 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
   },
-});
+});*/
