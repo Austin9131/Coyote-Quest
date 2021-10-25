@@ -21,7 +21,7 @@ const stylesTest = StyleSheet.create({
     }
 })
 
-const styletext = StyleSheet.create({
+const styleText = StyleSheet.create({
     mainText: {
         fontSize: 30,
       },
@@ -65,4 +65,4 @@ const buttons = StyleSheet.create({
     },
 })
 
-export { stylesTest, buttons }
+export { stylesTest, buttons, styleText }
