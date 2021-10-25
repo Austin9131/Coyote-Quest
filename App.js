@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
     <View style={stylesTest.container}>
       <View style={styles.header}>
         <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
-          <Text style={styletext.backText}>
+          <Text style={styleText.backText}>
              Back
           </Text>
         </Pressable>
