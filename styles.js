@@ -21,7 +21,24 @@ const stylesTest = StyleSheet.create({
     }
 })
 
-const styleText = StyleSheet.create({
+const styleicon = StyleSheet.create({
+    backIcon: {
+        flex: 1,
+        height: 10,
+        width: 5,
+      },
+    profileIcon:{
+        width: 30,
+        height: 30,
+        borderRadius: 5,
+      },
+    loginIcon: {
+        height: 200,
+        width: 200,
+      },
+})
+
+const styletext = StyleSheet.create({
     mainText: {
         fontSize: 30,
       },
@@ -65,4 +82,4 @@ const buttons = StyleSheet.create({
     },
 })
 
-export { stylesTest, buttons, styleText }
+export { stylesTest, buttons, styleicon, styletext }

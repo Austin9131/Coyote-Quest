@@ -26,7 +26,7 @@ const LoginScreen = ({ navigation }) => {
         </Pressable>
       </View>
       <View style={styles.body}>
-        <Image style={styles.loginImage} source={require('./assets/ic_launcher_foreground.png')}/>
+        <Image style={styles.loginIcon} source={require('./assets/ic_launcher_foreground.png')}/>
         <TextInput
           style = {styles.input}
           autoCapitalize='none'
@@ -146,22 +146,22 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
   },
-  backIcon: {
+  /*backIcon: {
     flex: 1,
     height: 10,
     width: 5,
-  },
+  },*/
   /*backText: {
     flex: 2,
     height: 20,
     fontSize: 20,
     color: '#fff', 
   },*/
-  profileIcon:{
+  /*profileIcon:{
     width: 30,
     height: 30,
     borderRadius: 5,
-  },
+  },*/
 /*  backButton: {
     width: 120,
     height: 35,
@@ -198,10 +198,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#fff',
   },*/
-  loginImage: {
+  /*loginIcon: {
     height: 200,
     width: 200,
-  },
+  },*/
   /*mainText: {
     fontSize: 30,
   },*/
