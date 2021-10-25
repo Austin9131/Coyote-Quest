@@ -4,6 +4,9 @@ import { createContext, useContext } from 'react';
 import { Text, Pressable, View } from 'react-native';
 import { buttons, maps, styles, text  } from '../../styles';
 
+//This is the Authorized User Main Screen, displays additional layers to assist faculty members
+//accessed through entering a permited login on the login screen
+
 export const AuthContext = createContext ({ hasUser: false, setUser: () => {} });
 
 export const AuthMainScreen = ({ navigation }) => {

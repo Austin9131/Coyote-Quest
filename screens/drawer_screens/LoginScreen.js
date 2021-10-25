@@ -3,6 +3,10 @@ import { useState } from 'react';
 import { Image, Text, TextInput, Pressable, View, Alert } from 'react-native';
 import { buttons, icon, styles, text } from '../../styles';
 
+//login screen handles the login function for access to the authorized user screen
+//accessed through pressing the profileicon button on the main screen
+//pressing the back button takes you back the the main screen
+
 export const LoginScreen = ({ navigation }) => {
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -31,8 +35,7 @@ export const LoginScreen = ({ navigation }) => {
             autoCorrect= {false}
             onChangeText={(password) => setPassword(password)}
             placeholder='password'
-          />
-  
+          /> 
           <Pressable style={buttons.bodyButton} onPress={() => {username === 'mtxlogin' && password === 'mtxlogin'? navigation.navigate('Authorized')
             : Alert.alert(
               'Error', 'Invalid User Login',

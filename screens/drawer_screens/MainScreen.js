@@ -3,6 +3,9 @@ import * as React from 'react';
 import { Image, Pressable, View } from 'react-native';
 import { buttons, icon, maps, styles } from '../../styles';
 
+//main screen is what is first seen after the app opens and holds the base map
+//the profile icon button will take you to the login screen
+
 export const MainScreen = ({ navigation }) => {
     return(
       <View style={styles.container}>
