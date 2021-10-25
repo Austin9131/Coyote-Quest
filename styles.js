@@ -31,6 +31,13 @@ const buttons = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#0065BD',
     },
+    headerButtonDouble: {
+        width: 120,
+        height: 35,
+        marginLeft: 10,
+        marginBottom: 10,
+        backgroundColor: '#0065BD',
+      },
     bodyButton: {
         width: 100,
         height: 30,
