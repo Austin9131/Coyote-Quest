@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { createContext, useContext, useState } from 'react';
-import { StyleSheet, Button, Image, Text, TextInput, Pressable,  View, Alert } from 'react-native';
+import MapView from 'react-native-maps';
+import * as React from 'react';
+import { createContext, useContext, useState } from 'react';
+import { StyleSheet, Button, Image, Text, TextInput, Pressable, View, Alert, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { stylesTest, buttons } from './styles'
@@ -69,9 +71,14 @@ const MainScreen = ({ navigation }) => {
         </Pressable>
       </View>
         <View style={styles.body}>
-          <Text style={styles.mainText}>
-            Map Goes Here
-          </Text>
+          <MapView style={styles.map} 
+            initialRegion={{
+              latitude: 34.181358,
+              longitude: -117.323188,
+              latitudeDelta: 0.005,
+              longitudeDelta: 0.015,
+            }}
+            />
         </View>
     </View>
   );
@@ -90,9 +97,14 @@ const AuthMainScreen = ({ navigation }) => {
         </Pressable>
       </View>
       <View style={styles.body}>
-        <Text style={styles.mainText}>
-            Admin Map Goes Here
-        </Text>
+        <MapView style={styles.map} 
+            initialRegion={{
+              latitude: 34.181358,
+              longitude: -117.323188,
+              latitudeDelta: 0.005,
+              longitudeDelta: 0.015,
+            }}
+        />
       </View>
     </View>
   );
@@ -197,5 +209,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  map: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   },
 });

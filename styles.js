@@ -45,7 +45,7 @@ const buttons = StyleSheet.create({
         backgroundColor: '#0065BD',
         alignItems: 'center', 
         justifyContent: 'center',
-      }
+    },
 })
 
 export { stylesTest, buttons }
