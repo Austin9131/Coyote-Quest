@@ -5,7 +5,7 @@ import { createContext, useContext, useState } from 'react';
 import { StyleSheet, Button, Image, Text, TextInput, Pressable, View, Alert, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { stylesTest, buttons, styleText } from './styles'
+import { stylesTest, buttons, styleText, styleicon } from './styles'
 
 export const AuthContext = createContext ({ hasUser: false, setUser: () => {} });
 
@@ -26,7 +26,7 @@ const LoginScreen = ({ navigation }) => {
         </Pressable>
       </View>
       <View style={styles.body}>
-        <Image style={styles.loginIcon} source={require('./assets/ic_launcher_foreground.png')}/>
+        <Image style={styleicon.loginIcon} source={require('./assets/ic_launcher_foreground.png')}/>
         <TextInput
           style = {styles.input}
           autoCapitalize='none'
@@ -67,11 +67,12 @@ const MainScreen = ({ navigation }) => {
     <View style={stylesTest.container}>
       <View style={styles.header}>
         <Pressable style={buttons.headerButtonDouble} onPress = {() => navigation.navigate('Login')}>
-          <Image style={styles.profileIcon} source={require('./assets/login.png')}/>
+          <Image style={styleicon.profileIcon} source={require('./assets/login.png')}/>
         </Pressable>
       </View>
         <View style={styles.body}>
-          <MapView style={styles.map} 
+          <MapView style={styles.map}
+            mapType='satellite'
             initialRegion={{
               latitude: 34.181358,
               longitude: -117.322,
