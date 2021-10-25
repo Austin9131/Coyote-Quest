@@ -23,13 +23,13 @@ const stylesTest = StyleSheet.create({
 
 const buttons = StyleSheet.create({
     back: {
-    width: 120,
-    height: 35,
-    marginLeft: 10,
-    marginBottom: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    backgroundColor: '#0065BD',
+        width: 120,
+        height: 35,
+        marginLeft: 10,
+        marginBottom: 10,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: '#0065BD',
     },
     headerButtonDouble: {
         width: 120,

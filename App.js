@@ -66,7 +66,7 @@ const MainScreen = ({ navigation }) => {
   return(
     <View style={stylesTest.container}>
       <View style={styles.header}>
-        <Pressable style={styles.headerButtonDouble} onPress = {() => navigation.navigate('Login')}>
+        <Pressable style={buttons.headerButtonDouble} onPress = {() => navigation.navigate('Login')}>
           <Image style={styles.profileIcon} source={require('./assets/login.png')}/>
         </Pressable>
       </View>
