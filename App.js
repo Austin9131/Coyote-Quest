@@ -151,12 +151,12 @@ const styles = StyleSheet.create({
     height: 10,
     width: 5,
   },
-  backText: {
+  /*backText: {
     flex: 2,
     height: 20,
     fontSize: 20,
     color: '#fff', 
-  },
+  },*/
   profileIcon:{
     width: 30,
     height: 30,
@@ -194,17 +194,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
-  titleText: {
+  /*titleText: {
     fontSize: 20,
     color: '#fff',
-  },
+  },*/
   loginImage: {
     height: 200,
     width: 200,
   },
-  mainText: {
+  /*mainText: {
     fontSize: 30,
-  },
+  },*/
   body: {
     flex: 1,
     justifyContent: 'flex-start',

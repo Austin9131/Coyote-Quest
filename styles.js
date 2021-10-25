@@ -21,6 +21,23 @@ const stylesTest = StyleSheet.create({
     }
 })
 
+const styletext = StyleSheet.create({
+    mainText: {
+        fontSize: 30,
+      },
+      titleText: {
+        fontSize: 20,
+        color: '#fff',
+      },
+      backText: {
+        flex: 2,
+        height: 20,
+        fontSize: 20,
+        color: '#fff', 
+      },
+    
+})
+
 const buttons = StyleSheet.create({
     back: {
     width: 120,
