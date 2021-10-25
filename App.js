@@ -71,7 +71,8 @@ const MainScreen = ({ navigation }) => {
         </Pressable>
       </View>
         <View style={styles.body}>
-          <MapView style={styles.map} 
+          <MapView style={styles.map}
+            mapType='satellite'
             initialRegion={{
               latitude: 34.181358,
               longitude: -117.322,
