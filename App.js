@@ -5,7 +5,7 @@ import { createContext, useContext, useState } from 'react';
 import { StyleSheet, Button, Image, Text, TextInput, Pressable, View, Alert, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { stylesTest, buttons } from './styles'
+import { stylesTest, buttons, styleText } from './styles'
 
 export const AuthContext = createContext ({ hasUser: false, setUser: () => {} });
 
@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
     <View style={stylesTest.container}>
       <View style={styles.header}>
         <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
-          <Text style={styles.backText}>
+          <Text style={styleText.backText}>
              Back
           </Text>
         </Pressable>
@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
           placeholder='password'
         />
 
-        <Pressable style={styles.bodyButton} onPress={() => {username === 'mtxlogin' && password === 'mtxlogin'? navigation.navigate('Authorized')
+        <Pressable style={buttons.bodyButton} onPress={() => {username === 'mtxlogin' && password === 'mtxlogin'? navigation.navigate('Authorized')
           : Alert.alert(
             'Error', 'Invalid User Login',
             [
@@ -55,7 +55,7 @@ const LoginScreen = ({ navigation }) => {
               }
             ]
           )}}>
-          <Text style={styles.titleText}>Login</Text>
+          <Text style={styleText.titleText}>Login</Text>
         </Pressable>
       </View>
     </View>
@@ -90,8 +90,8 @@ const AuthMainScreen = ({ navigation }) => {
   return(
     <View style={stylesTest.container}>
       <View style={styles.header}>
-        <Pressable style={styles.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
-          <Text style={styles.titleText}>
+        <Pressable style={buttons.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
+          <Text style={styleText.titleText}>
             Logout
           </Text>
         </Pressable>
