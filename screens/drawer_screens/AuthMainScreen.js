@@ -22,13 +22,15 @@ export const AuthMainScreen = ({ navigation }) => {
           </Pressable>
         </View>
         <View style={styles.body}>
-          <MapView style={maps.main} 
-              initialRegion={{
-                latitude: 34.181358,
-                longitude: -117.322,
-                latitudeDelta: 0.005,
-                longitudeDelta: 0.017,
-              }}
+          <MapView 
+            style={maps.main}
+            provider='google' 
+            region={{
+              latitude: 34.181358,
+              longitude: -117.322,
+              latitudeDelta: 0.005,
+              longitudeDelta: 0.017,
+            }}
           />
         </View>
       </View>
