@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
-
+//styles for main objects/containers
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+//styles for icons
 const icon = StyleSheet.create({
   backIcon: {
     flex: 1,
@@ -35,6 +36,7 @@ const icon = StyleSheet.create({
     width: 200,
   },
 });
+//styles for text
 const text = StyleSheet.create({
   mainText: {
     fontSize: 30,
@@ -57,6 +59,7 @@ const text = StyleSheet.create({
     padding: 10,
   },
 });
+//styles for buttons
 const buttons = StyleSheet.create({
   back: {
     width: 120,
@@ -83,6 +86,7 @@ const buttons = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+//styles for maps
 const maps = StyleSheet.create({
   main: {
     width: Dimensions.get('window').width,
