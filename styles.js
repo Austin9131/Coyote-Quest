@@ -39,19 +39,23 @@ const icon = StyleSheet.create({
 //styles for text
 const text = StyleSheet.create({
   mainText: {
+    fontFamily: 'sanserif',
     fontSize: 30,
   },
   titleText: {
+    fontFamily: 'sanserif',
     fontSize: 20,
     color: '#fff',
   },
   backText: {
+    fontFamily: 'sanserif',
     flex: 2,
     height: 20,
     fontSize: 20,
     color: '#fff', 
   },
   input: {
+    fontFamily: 'sanserif',
     height: 40,
     width: 240,
     margin: 12,
