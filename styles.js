@@ -46,7 +46,6 @@ const text = StyleSheet.create({
     color: '#fff',
   },
   backText: {
-    flex: 2,
     height: 20,
     fontSize: 20,
     color: '#fff', 

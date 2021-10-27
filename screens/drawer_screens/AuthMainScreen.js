@@ -23,6 +23,7 @@ export const AuthMainScreen = ({ navigation }) => {
         </View>
         <View style={styles.body}>
           <MapView 
+            ref={(ref) => this.mapRef = ref }
             style={maps.main}
             provider='google'
             showsUserLocation={true}
@@ -32,6 +33,10 @@ export const AuthMainScreen = ({ navigation }) => {
               latitudeDelta: 0.005,
               longitudeDelta: 0.017,
             }}
+            onMapReady={() => {this.mapRef.setMapBoundaries( 
+              { latitude: 34.192742, longitude: -117.329707 },
+              { latitude: 34.176909, longitude: -117.313136 })}}
+            minZoomLevel = {14.5}
           />
         </View>
       </View>
