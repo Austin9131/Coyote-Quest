@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createContext, useContext } from 'react';
 import { Text, Pressable, View } from 'react-native';
 import { buttons, styles, text  } from '../../styles';
-import { MainMap } from '../components/MainMap';
+import { MainMap } from '../components/Maps/MainMap';
 
 //This is the Authorized User Main Screen, displays additional layers to assist faculty members
 //accessed through entering a permited login on the login screen

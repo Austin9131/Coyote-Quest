@@ -1,6 +1,6 @@
 import MapView from 'react-native-maps';
 import * as React from 'react';
-import { maps } from '../../styles';
+import { maps } from '../../../styles';
 
 export const MainMap = () => {
     return(

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Image, Pressable, View } from 'react-native';
 import { buttons, icon, styles } from '../../styles';
-import { MainMap } from '../components/MainMap';
+import { MainMap } from '../components/Maps/MainMap';
 
 //main screen is what is first seen after the app opens and holds the base map
 //the profile icon button will take you to the login screen
