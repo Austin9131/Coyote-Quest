@@ -17,6 +17,9 @@
       "**/*"
     ],
     "ios": {
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app uses location to know where the user is on campus."
+      },
       "supportsTablet": true
     },
     "android": {

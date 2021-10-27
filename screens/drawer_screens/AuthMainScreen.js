@@ -24,7 +24,8 @@ export const AuthMainScreen = ({ navigation }) => {
         <View style={styles.body}>
           <MapView 
             style={maps.main}
-            provider='google' 
+            provider='google'
+            showsUserLocation={true}
             region={{
               latitude: 34.181358,
               longitude: -117.322,
