@@ -46,6 +46,7 @@ const text = StyleSheet.create({
     color: '#fff',
   },
   backText: {
+    flex: 2,
     height: 30,
     fontSize: 20,
     color: '#fff', 
@@ -67,6 +68,7 @@ const buttons = StyleSheet.create({
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'center',
+    alignContent: 'flex-start',
     backgroundColor: '#0065BD',
   },
   headerButtonDouble: {
