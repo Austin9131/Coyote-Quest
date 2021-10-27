@@ -40,6 +40,7 @@ const icon = StyleSheet.create({
 const text = StyleSheet.create({
   mainText: {
     fontSize: 30,
+    color: '#fff',
   },
   titleText: {
     fontSize: 20,
@@ -55,7 +56,9 @@ const text = StyleSheet.create({
     height: 40,
     width: 240,
     margin: 12,
-    borderWidth: 1,
+    borderWidth: 2.5,
+    borderColor: '#D3D3D3',
+    borderRadius: 7,
     padding: 10,
   },
 });
@@ -80,8 +83,8 @@ const buttons = StyleSheet.create({
   },
   bodyButton: {
     width: 100,
-    height: 30,
-    borderRadius: 5,
+    height: 40,
+    borderRadius: 20,
     backgroundColor: '#0065BD',
     alignItems: 'center', 
     justifyContent: 'center',
