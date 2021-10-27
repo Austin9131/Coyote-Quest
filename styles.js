@@ -46,7 +46,7 @@ const text = StyleSheet.create({
     color: '#fff',
   },
   backText: {
-    height: 20,
+    height: 30,
     fontSize: 20,
     color: '#fff', 
   },
@@ -61,7 +61,7 @@ const text = StyleSheet.create({
 //styles for buttons
 const buttons = StyleSheet.create({
   back: {
-    width: 120,
+    width: 130,
     height: 35,
     marginLeft: 10,
     marginBottom: 10,
