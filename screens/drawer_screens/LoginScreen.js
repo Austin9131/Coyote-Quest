@@ -21,7 +21,7 @@ export const LoginScreen = ({ navigation }) => {
           </Pressable>
         </View>
         <View style={styles.body}>
-          <Image style={icon.loginIcon} source={require('../../assets/ic_launcher_foreground.png')}/>
+          <Image style={icon.loginIcon} source={require('../../assets/icon.png')}/>
           <TextInput
             style = {text.input}
             autoCapitalize='none'

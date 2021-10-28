@@ -16,8 +16,8 @@ export const AuthMap = () => {
               longitudeDelta: 0.017,
             }}
             onMapReady={() => {this.mapRef.setMapBoundaries( 
-              { latitude: 34.192742, longitude: -117.329707 },
-              { latitude: 34.176909, longitude: -117.313136 })}}
+              { latitude: 34.188731, longitude: -117.330944 },
+              { latitude: 34.176092, longitude: -117.313079 })}}
             minZoomLevel = {14.5}
           />
     );
