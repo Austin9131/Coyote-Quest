@@ -71,7 +71,7 @@ const buttons = StyleSheet.create({
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignContent: 'flex-start',
+    alignContent: 'center',
     backgroundColor: '#0065BD',
   },
   headerButtonDouble: {

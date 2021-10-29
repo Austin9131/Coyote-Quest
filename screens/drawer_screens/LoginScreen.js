@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { AntDesign } from '@expo/vector-icons'; 
 import { Image, Text, TextInput, Pressable, View, Alert } from 'react-native';
 import { buttons, icon, styles, text } from '../../styles';
 
@@ -15,9 +16,10 @@ export const LoginScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
-            <Text style={text.backText}>
-               Back
-            </Text>
+              <AntDesign name="left" size={30} color="#fff" />
+                <Text style={text.backText}>
+                  Back
+                </Text>
           </Pressable>
         </View>
         <View style={styles.body}>
