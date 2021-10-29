@@ -17,9 +17,9 @@ export const LoginScreen = ({ navigation }) => {
         <View style={styles.header}>
           <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
               <AntDesign name="left" size={30} color="#fff" />
-                <Text style={text.backText}>
-                  Back
-                </Text>
+              <Text style={text.backText}>
+                Back
+              </Text>
           </Pressable>
         </View>
         <View style={styles.body}>
