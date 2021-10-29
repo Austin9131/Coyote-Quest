@@ -37,6 +37,7 @@ export const LoginScreen = ({ navigation }) => {
             autoCorrect= {false}
             onChangeText={(password) => setPassword(password)}
             placeholder='password'
+            secureTextEntry={true}
           /> 
           <Pressable style={buttons.bodyButton} onPress={() => {username === 'mtxlogin' && password === 'mtxlogin'? navigation.navigate('Authorized')
             : Alert.alert(
