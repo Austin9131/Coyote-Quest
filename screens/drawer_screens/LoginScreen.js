@@ -16,7 +16,7 @@ export const LoginScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
-            <Entypo name="chevron-thin-left" size={24} color="white" />
+            <Entypo name="chevron-thin-left" size={23} color="white" />
               <Text style={text.backText}>
                 back
               </Text>

@@ -7,11 +7,11 @@ const styles = StyleSheet.create({
   },
   header: {
     width: '100%',
-    height: '10%',
+    height: '9.5%',
     backgroundColor: '#0065BD',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    alignItems: 'flex-end',
+    alignItems: 'flex-end'
   },
   body: {
     flex: 1,
