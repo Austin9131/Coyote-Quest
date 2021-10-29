@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { AntDesign } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons';
 import { Image, Text, TextInput, Pressable, View, Alert } from 'react-native';
 import { buttons, icon, styles, text } from '../../styles';
 
@@ -16,9 +16,9 @@ export const LoginScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
-              <AntDesign name="left" size={25} color="#fff" />
+            <Entypo name="chevron-thin-left" size={24} color="white" />
               <Text style={text.backText}>
-                Back
+                back
               </Text>
           </Pressable>
         </View>
@@ -51,7 +51,7 @@ export const LoginScreen = ({ navigation }) => {
                 }
               ]
             )}}>
-            <Text style={text.titleText}>Login</Text>
+            <Text style={text.titleText}>login</Text>
           </Pressable>
         </View>
       </View>

@@ -16,7 +16,7 @@ export const AuthMainScreen = ({ navigation }) => {
       <View style={styles.header}>
         <Pressable style={buttons.headerButtonDouble} onPress={() => navigation.navigate('Main')}>
           <Text style={text.titleText}>
-            Logout
+            logout
           </Text>
         </Pressable>
       </View>
