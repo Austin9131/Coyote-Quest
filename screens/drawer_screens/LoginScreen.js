@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { Entypo } from '@expo/vector-icons';
 import { Image, Text, TextInput, Pressable, View, Alert } from 'react-native';
 import { buttons, icon, styles, text } from '../../styles';
 
@@ -15,9 +16,10 @@ export const LoginScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Pressable style={buttons.back} onPress={() => navigation.navigate('Main')}>
-            <Text style={text.backText}>
-               Back
-            </Text>
+            <Entypo name="chevron-thin-left" size={23} color="white" />
+              <Text style={text.backText}>
+                back
+              </Text>
           </Pressable>
         </View>
         <View style={styles.body}>
@@ -35,6 +37,7 @@ export const LoginScreen = ({ navigation }) => {
             autoCorrect= {false}
             onChangeText={(password) => setPassword(password)}
             placeholder='password'
+            secureTextEntry={true}
           /> 
           <Pressable style={buttons.bodyButton} onPress={() => {username === 'mtxlogin' && password === 'mtxlogin'? navigation.navigate('Authorized')
             : Alert.alert(
@@ -49,7 +52,7 @@ export const LoginScreen = ({ navigation }) => {
                 }
               ]
             )}}>
-            <Text style={text.titleText}>Login</Text>
+            <Text style={text.titleText}>login</Text>
           </Pressable>
         </View>
       </View>
