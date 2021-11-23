@@ -54,7 +54,7 @@ export const MainMap = () => {
       { id: 'IC1', name: 'Information Center', latitude: 34.1796664634309 , longitude: -117.326001408602 },
       { id: 'IC2', name: 'Information Center 2', latitude: 34.1790910908728 , longitude: -117.319436702038 },
       { id: 'PKW', name: 'Parking Structure West', latitude: 34.186485705316 , longitude:  -117.325494471016 },
-      { id: 'PKE', name: 'Parking Structure East', latitude: 34.1840084251964 , longitude: 117.320266309008 },
+      { id: 'PKE', name: 'Parking Structure East', latitude: 34.1840084251964 , longitude: -117.320266309008 },
     ]
   }
     return(
