@@ -18,6 +18,16 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
+  search: {
+    width: '100%',
+    height: '5.5%',
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomLeftRadius: 7,
+    borderBottomRightRadius: 7,
+  },
 });
 //styles for icons
 const icon = StyleSheet.create({
@@ -61,6 +71,14 @@ const text = StyleSheet.create({
     borderRadius: 7,
     padding: 10,
   },
+  search: {
+    flex: 1,
+    borderWidth: 2.5,
+    borderColor: '#D3D3D3',
+    borderBottomLeftRadius: 7,
+    borderBottomRightRadius: 7,
+    padding: 10,
+  },
 });
 //styles for buttons
 const buttons = StyleSheet.create({
@@ -94,7 +112,8 @@ const buttons = StyleSheet.create({
 const maps = StyleSheet.create({
   main: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    height: Dimensions.get('window').height * .905,
+    alignItems: 'center',
   },
 });
 

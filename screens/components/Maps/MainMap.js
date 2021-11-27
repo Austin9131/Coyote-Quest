@@ -2,8 +2,10 @@ import MapView from 'react-native-maps';
 import Marker from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
-import { maps, text } from '../../../styles';
+import { View, Text } from 'react-native';
+import { maps, text, styles } from '../../../styles';
 import { TextInput } from 'react-native-gesture-handler';
+import SearchableDropdown from 'react-native-searchable-dropdown';
 
 export const MainMap = () => {
   const [ search, setSearch ] = useState('');
@@ -54,8 +56,29 @@ export const MainMap = () => {
       { id: 'IC1', name: 'Information Center', latitude: 34.1796664634309 , longitude: -117.326001408602 },
       { id: 'IC2', name: 'Information Center 2', latitude: 34.1790910908728 , longitude: -117.319436702038 },
       { id: 'PKW', name: 'Parking Structure West', latitude: 34.186485705316 , longitude:  -117.325494471016 },
-      { id: 'PKE', name: 'Parking Structure East', latitude: 34.1840084251964 , longitude: 117.320266309008 },
+      { id: 'PKE', name: 'Parking Structure East', latitude: 34.1840084251964 , longitude: -117.320266309008 },
     ]
+  }
+  function findmarkerlat(id) {
+    for( const marker of state.markers) {
+      if( marker.id === id ) {
+        return marker.latitude;
+      }
+    }
+  }
+  function findmarkerlong(id) {
+    for( const marker of state.markers) {
+      if( marker.id === id ) {
+        return marker.longitude;
+      }
+    }
+  }
+  function findmarkername(id) {
+    for( const marker of state.markers) {
+      if( marker.id === id ) {
+        return marker.name;
+      }
+    }
   }
     return(
         <MapView 
@@ -74,20 +97,44 @@ export const MainMap = () => {
               { latitude: 34.176092, longitude: -117.313079 })}}
             minZoomLevel = {14.5}
           >
-            <TextInput
-              style = {text.input}
-              autoCapitalize='none'
-              autoCorrect= {false}
-              onChangeText={(search) => setSearch(search)}
-              placeholder='search'
-            />
-            {this.state.markers.map(( marker, index ) => (
-              <MapView.Marker
-                key={index}
-                title={marker.name}
-                coordinate={{ latitude: marker.latitude ,longitude: marker.longitude }}
-              />
-              ))}
+          <SearchableDropdown
+            onTextChange={(search) => console.log(search)}
+            onItemSelect={(marker) => setSearch(marker.id)}
+            containerStyle={{ paddingTop: 5, width: '95%', alignItems: 'center'}}
+            textInputStyle={{
+              padding: 12,
+              borderWidth: 1,
+              borderColor: '#ccc',
+              backgroundColor: '#FAF7F6',
+              borderRadius: 7,
+              width: '100%'
+            }}
+            itemStyle={{
+              padding: 10,
+              marginTop: 2,
+              backgroundColor: '#FAF9F8',
+              borderColor: '#bbb',
+              borderWidth: 1,
+              borderRadius: 7,
+              width: '100%'
+            }}
+            itemTextStyle={{
+              color: '#222',
+            }}
+            itemsContainerStyle={{
+              maxHeight: '60%',
+              width: '100%'
+            }}
+            items = { state.markers }
+            defaultIndex = {2}
+            placeholder = "search"
+            resetValue = {false}
+            underlineColorAndroid = "transparent"
+          />
+          <MapView.Marker
+            title= {findmarkername(search)}
+            coordinate={search === '' ? { latitude: 100, longitude: 100 } : { latitude: findmarkerlat(search), longitude: findmarkerlong(search) }}
+          />
           </MapView>
     );
 };
