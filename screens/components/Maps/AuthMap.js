@@ -8,8 +8,40 @@ export const AuthMap = () => {
   state = {
     polylines: [
       { latling: [{latitude: 34.18725753, longitude: -117.3279266}, {latitude: 34.18701043 , longitude: -117.3279365}] },
+<<<<<<< HEAD
       { latling: [{latitude: 34.18701043, longitude: -117.3279365}, {latitude: 34.186198 , longitude: -117.3300622}] }
 
+=======
+      { latling: [{latitude: 34.18701043, longitude: -117.3279365}, {latitude: 34.186198 , longitude: -117.3300622}]},
+      { latling: [{latitude: 34.18678806587779 , longitude: -117.32855070963915 }, {latitude: 34.1870591490249  , longitude: -117.328753669741 }]},
+      { latling: [{latitude: 34.1864002295336 , longitude: -117.329575270922 }, {latitude: 34.1865744218195  , longitude: -117.329689444384 }]},
+      { latling: [{latitude: 34.1865597225508 , longitude: -117.329118577078 }, {latitude:34.1861605657776  , longitude:-117.32885755788 }]},
+      { latling: [{latitude: 34.18617780288656 , longitude: -117.33010375379115 }, {latitude: 34.1824202456658 , longitude: -117.329512762842 }]}
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+>>>>>>> 25bfe071ccf648b34d12b7b3cbc2f9bd7ddc20b9
     ]
   }
     return(
