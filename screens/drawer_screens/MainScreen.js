@@ -16,7 +16,7 @@ export const MainScreen = ({ navigation }) => {
           <AntDesign name="user" size={30} color="white" />
         </Pressable>
       </View>
-        <View style={styles.body}>
+        <View style={styles.map}>
           <MainMap/>
         </View>
     </View>

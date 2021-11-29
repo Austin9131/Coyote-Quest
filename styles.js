@@ -18,15 +18,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
+  map: {
+    flex: 1,
+  },
   search: {
-    width: '100%',
-    height: '5.5%',
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderBottomLeftRadius: 7,
-    borderBottomRightRadius: 7,
+    alignItems: 'center'
   },
 });
 //styles for icons
@@ -111,9 +107,13 @@ const buttons = StyleSheet.create({
 //styles for maps
 const maps = StyleSheet.create({
   main: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height * .905,
-    alignItems: 'center',
   },
 });
 

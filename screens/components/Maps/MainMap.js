@@ -2,10 +2,11 @@ import MapView from 'react-native-maps';
 import Marker from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 import { maps, text, styles } from '../../../styles';
 import { TextInput } from 'react-native-gesture-handler';
 import SearchableDropdown from 'react-native-searchable-dropdown';
+import { back } from 'react-native/Libraries/Animated/src/Easing';
 
 export const MainMap = () => {
   const [ search, setSearch ] = useState('');
@@ -81,26 +82,36 @@ export const MainMap = () => {
     }
   }
     return(
-        <MapView 
-            ref={(ref) => this.mapRef = ref }
-            style={maps.main}
-            provider='google'
-            showsUserLocation={true}
-            region={{
-              latitude: 34.181358,
-              longitude: -117.322,
-              latitudeDelta: 0.005,
-              longitudeDelta: 0.017,
-            }}
-            onMapReady={() => {this.mapRef.setMapBoundaries( 
-              { latitude: 34.188731, longitude: -117.330944 },
-              { latitude: 34.176092, longitude: -117.313079 })}}
-            minZoomLevel = {14.5}
-          >
+    <View>
+      <View>
+        <MapView
+          ref={(ref) => this.mapRef = ref }
+          style={maps.main}
+          provider='google'
+          showsUserLocation={true}
+          region={{
+            latitude: 34.181358,
+            longitude: -117.322,
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.017,
+          }}
+          onMapReady={() => {this.mapRef.setMapBoundaries( 
+            { latitude: 34.188731, longitude: -117.330944 },
+            { latitude: 34.176092, longitude: -117.313079 })}}
+          minZoomLevel = {14.5}
+        >
+          <MapView.Marker
+            key = { 0 }
+            title = {findmarkername(search)}
+            coordinate={search === '' ? { latitude: 100, longitude: 100 } : { latitude: findmarkerlat(search), longitude: findmarkerlong(search) }}
+          />
+        </MapView>
+      </View>
+        <View style = {styles.search}>
           <SearchableDropdown
             onTextChange={(search) => console.log(search)}
             onItemSelect={(marker) => setSearch(marker.id)}
-            containerStyle={{ paddingTop: 5, width: '95%', alignItems: 'center'}}
+            containerStyle={{ paddingTop: 5, width: '95%', alignItems: 'center' }}
             textInputStyle={{
               padding: 12,
               borderWidth: 1,
@@ -123,7 +134,8 @@ export const MainMap = () => {
             }}
             itemsContainerStyle={{
               maxHeight: '60%',
-              width: '100%'
+              width: '100%',
+              backgroundColor: 'transparent'
             }}
             items = { state.markers }
             defaultIndex = {2}
@@ -131,10 +143,7 @@ export const MainMap = () => {
             resetValue = {false}
             underlineColorAndroid = "transparent"
           />
-          <MapView.Marker
-            title= {findmarkername(search)}
-            coordinate={search === '' ? { latitude: 100, longitude: 100 } : { latitude: findmarkerlat(search), longitude: findmarkerlong(search) }}
-          />
-          </MapView>
-    );
+        </View>
+    </View>
+  );
 };
