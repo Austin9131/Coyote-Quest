@@ -18,7 +18,7 @@ export const AuthMap = () => {
       { latling: [{latitude: 34.18617780288656 , longitude: -117.33010375379115 }, {latitude: 34.1824202456658 , longitude: -117.329512762842 }]},
       { latling: [{latitude: 34.187025082191 , longitude: -117.328006120001 }, {latitude: 34.1855037971463 , longitude: -117.326365390507 }]},
       { latling: [{latitude: 34.1862948987465 , longitude: -117.327189138634 }, {latitude: 34.1875404913909  , longitude: -117.325602592277 }]},
-      //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
+      { latling: [{latitude: 34.186919674139 , longitude: -117.326409187175 }, {latitude: 34.1866204213817  , longitude: -117.326000607423 }]},
       //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
       //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
       //{ latling: [{latitude: , longitude: }, {latitude:  , longitude: }]},
