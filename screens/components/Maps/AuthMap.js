@@ -2,9 +2,12 @@ import MapView from 'react-native-maps';
 import  Polyline  from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
-import { maps } from '../../../styles';
+import { maps, styles } from '../../../styles';
+import { View } from 'react-native';
 
 export const AuthMap = () => {
+  const [ search, setSearch ] = useState('');
+
   state = {
     polylines: [
       { latling: [{latitude: 34.18725753, longitude: -117.3279266}, {latitude: 34.18701043 , longitude: -117.3279365}] },
@@ -58,8 +61,9 @@ export const AuthMap = () => {
               { latitude: 34.176092, longitude: -117.313079 })}}
             minZoomLevel = {14.5}
           >
-            {this.state.polylines.map( polyline => (
+            {this.state.polylines.map( (polyline, index)  => (
               <MapView.Polyline
+                key = { index }
                 coordinates = {polyline.latling}
                 strokeColor="#0065BD"
                 strokeWidth={4}
@@ -70,6 +74,7 @@ export const AuthMap = () => {
           </MapView>
         </View>
           <View style = {styles.search}>
+            {/*
             <SearchableDropdown
               onTextChange={(search) => console.log(search)}
               onItemSelect={(marker) => setSearch(marker.id)}
@@ -105,6 +110,7 @@ export const AuthMap = () => {
               resetValue = {false}
               underlineColorAndroid = "transparent"
               />
+            */}
           </View>
     </View>
   );

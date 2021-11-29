@@ -20,7 +20,7 @@ export const AuthMainScreen = ({ navigation }) => {
           </Text>
         </Pressable>
       </View>
-      <View style={styles.body}>
+      <View style={styles.map}>
         <AuthMap/>
       </View>
     </View>
