@@ -142,7 +142,7 @@ export const MainMap = () => {
             placeholder = "search"
             resetValue = {false}
             underlineColorAndroid = "transparent"
-          />
+            />
         </View>
     </View>
   );
