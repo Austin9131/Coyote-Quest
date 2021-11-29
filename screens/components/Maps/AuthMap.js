@@ -2,9 +2,12 @@ import MapView from 'react-native-maps';
 import  Polyline  from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
-import { maps } from '../../../styles';
+import { maps, styles } from '../../../styles';
+import { View } from 'react-native';
 
 export const AuthMap = () => {
+  const [ search, setSearch ] = useState('');
+
   state = {
     polylines: [
       { latling: [{latitude: 34.18725753, longitude: -117.3279266}, {latitude: 34.18701043 , longitude: -117.3279365}] },
@@ -40,7 +43,9 @@ export const AuthMap = () => {
     ]
   }
     return(
-        <MapView 
+      <View>
+        <View>
+          <MapView 
             ref={(ref) => this.mapRef = ref }
             style={maps.main}
             provider='google'
@@ -55,16 +60,58 @@ export const AuthMap = () => {
               { latitude: 34.188731, longitude: -117.330944 },
               { latitude: 34.176092, longitude: -117.313079 })}}
             minZoomLevel = {14.5}
-        >
-          {this.state.polylines.map( polyline => (
-            <MapView.Polyline
-              coordinates = {polyline.latling}
-              strokeColor="#000"
-              strokeWidth={4}
-              lineDashPattern={[1]}
-              lineCap = 'square'
-            />
-          ))}
-        </MapView>
-    );
+          >
+            {this.state.polylines.map( (polyline, index)  => (
+              <MapView.Polyline
+                key = { index }
+                coordinates = {polyline.latling}
+                strokeColor="#0065BD"
+                strokeWidth={4}
+                lineDashPattern={[1]}
+                lineCap = 'square'
+              />
+            ))}
+          </MapView>
+        </View>
+          <View style = {styles.search}>
+            {/*
+            <SearchableDropdown
+              onTextChange={(search) => console.log(search)}
+              onItemSelect={(marker) => setSearch(marker.id)}
+              containerStyle={{ paddingTop: 5, width: '95%', alignItems: 'center' }}
+              textInputStyle={{
+                padding: 12,
+                borderWidth: 1,
+                borderColor: '#ccc',
+                backgroundColor: '#FAF7F6',
+                borderRadius: 7,
+                width: '100%'
+              }}
+              itemStyle={{
+                padding: 10,
+                marginTop: 2,
+                backgroundColor: '#FAF9F8',
+                borderColor: '#bbb',
+                borderWidth: 1,
+                borderRadius: 7,
+                width: '100%'
+              }}
+              itemTextStyle={{
+                color: '#222',
+              }}
+              itemsContainerStyle={{
+                maxHeight: '60%',
+                width: '100%',
+                backgroundColor: 'transparent'
+              }}
+              items = { state.markers }
+              defaultIndex = {2}
+              placeholder = "search"
+              resetValue = {false}
+              underlineColorAndroid = "transparent"
+              />
+            */}
+          </View>
+    </View>
+  );
 };
