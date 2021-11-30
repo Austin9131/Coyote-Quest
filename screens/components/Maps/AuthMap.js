@@ -53,7 +53,8 @@ export const AuthMap = () => {
       { latling: [{latitude: 34.184604411424, longitude: -117.323662532954}, {latitude: 34.1844807186182, longitude: -117.323732953166}] },
       { latling: [{latitude: 34.1845838550391, longitude: -117.323637605445}, {latitude: 34.1846333772307, longitude: -117.323599590994}] }, //Jacob End
       { latling: [{latitude: 34.1810945129381, longitude: -117.315669535731}, {latitude: 34.18111240282, longitude: -117.315669535731}] },
-      { latling: [{latitude: 34.1819337527404, longitude: -117.317300664287}, {latitude: 34.179686699915, longitude: -117.317343835066}] },
+      { latling: [{latitude: 34.18111240282, longitude: -117.315669535731}, {latitude: 34.18111240282, longitude: -117.31731649230235}] },
+      { latling: [{latitude: 34.1819337527404, longitude: -117.317300664287}, {latitude: 34.1818378098163, longitude: -117.317330138447}, {latitude: 34.1812591452461, longitude: -117.317350476724}, {latitude: 34.18111240282, longitude: -117.31731649230235}, {latitude: 34.1809932761888, longitude: -117.317331555963}, {latitude: 34.179686699915, longitude: -117.317343835066}] }, // Top
       { latling: [{latitude: 34.1812591452461, longitude: -117.317350476724}, {latitude: 34.1812722964348, longitude: -117.317449209757}] },
       { latling: [{latitude: 34.1809932761888, longitude: -117.317331555963}, {latitude: 34.1809980401356, longitude: -117.317423694476}] },
       { latling: [{latitude: 34.1809980401356, longitude: -117.317423694476}, {latitude: 34.1810450199658, longitude: -117.317493152741}] },
@@ -66,7 +67,7 @@ export const AuthMap = () => {
       { latling: [{latitude: 34.1810179021264, longitude: -117.319338758051}, {latitude: 34.1812079466939, longitude: -117.319799450621}] },
       { latling: [{latitude: 34.1834360462296, longitude: -117.318584639752}, {latitude: 34.1828591836324, longitude: -117.318954611323}] },
       { latling: [{latitude: 34.1828591836324, longitude: -117.318954611323}, {latitude: 34.1822119583046, longitude: -117.319094945368}] },
-      { latling: [{latitude: 34.1822119583046, longitude: -117.319094945368}, {latitude: 34.1812079466939, longitude: -117.319799450621}] },
+      { latling: [{latitude: 34.1822119583046, longitude: -117.319094945368}, {latitude: 34.1819303950691, longitude: -117.319246416092}, {latitude: 34.181845358764, longitude: -117.319293397552}, {latitude: 34.1816061373817, longitude: -117.319472722449}, {latitude: 34.1812079466939, longitude: -117.319799450621}] }, //line
       { latling: [{latitude: 34.1812079466939, longitude: -117.319799450621}, {latitude: 34.1808286593154, longitude: -117.320397858995}] },
       { latling: [{latitude: 34.1816061373817, longitude: -117.319472722449}, {latitude: 34.1816392094693, longitude: -117.319555840185}] },
       { latling: [{latitude: 34.1825660634662, longitude: -117.319152899854}, {latitude:34.1825482196844, longitude: -117.319024609435}] },
