@@ -1,5 +1,4 @@
-import MapView from 'react-native-maps';
-import  Polyline  from 'react-native-maps';
+import MapView, { Marker, Polyline } from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
 import { maps, styles } from '../../../styles';
@@ -99,7 +98,7 @@ export const AuthMap = () => {
       { latlng: [{latitude: 34.1842470491104, longitude: -117.319438005601}, {latitude: 34.1849065773859, longitude: -117.320055078180}] },
       { latlng: [{latitude: 34.1812079466939, longitude: -117.319799450621}, {latitude: 34.1790704951081, longitude: -117.319371722381}] },
       { latlng: [{latitude: 34.1808286593154, longitude: -117.320397858995}, {latitude: 34.1806758349195, longitude: -117.321277101236}] },
-      { latlng: [{latitude: 34.1798820188375, longitude: -117.323188712290}, {latitude: 34.1787105531865, longitude: -117.323175301245}] },
+      { latlng: [{latitude: 34.1798820188375, longitude: -117.323188712290}, {latitude: 34.1787105531865, longitude: -117.323175301245}, {latitude: 34.1784998901228, longitude: -117.322874893836}, {latitude: 34.1786220026474, longitude: -117.322374661854}, {latitude: 34.1790126783278, longitude: -117.322259326867}, {latitude: 34.1796873766541, longitude: -117.322573145322}] },
       //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
       //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
       //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
@@ -150,10 +149,16 @@ export const AuthMap = () => {
               { latitude: 34.176092, longitude: -117.313079 })}}
             minZoomLevel = {14.5}
           >
+            {this.state.hydrants.map((hydrant, index) => (
+              <Marker
+              key = {index}
+              coordinate={hydrant.latlng}
+              />
+            ))}
             {this.state.polylines.map( (polyline, index)  => (
-              <MapView.Polyline
+              <Polyline
                 key = { index }
-                coordinates = {polyline.latling}
+                coordinates = {polyline.latlng}
                 strokeColor="#0065BD"
                 strokeWidth={4}
                 lineDashPattern={[1]}
