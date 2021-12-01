@@ -1,4 +1,4 @@
-import MapView, { Marker, Polyline } from 'react-native-maps';
+import MapView, { Marker, Polyline, UrlTile} from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
 import { maps, styles } from '../../../styles';
@@ -45,7 +45,7 @@ export const AuthMap = () => {
       { latlng: [{latitude: 34.1855885686235, longitude: -117.324843485609}, {latitude: 34.1853998579560, longitude: -117.325253087592}, {latitude: 34.1855037971463, longitude: -117.326365390507}] },
       { latlng: [{latitude: 34.1858662219551, longitude: -117.324586021505}, {latitude: 34.1858146578340, longitude: -117.324511903051}] }, 
       { latlng: [{latitude: 34.1858147250624, longitude: -117.324102301068}, {latitude: 34.1856878650894, longitude: -117.323846137288}] },
-      { latlng: [{latitude: 34.1856878650894, longitude: -117.323846137288}, {latitude: 34.1855072220748, longitude: -117.32395406416}] },
+      { latlng: [{latitude: 34.1856878650894, longitude: -117.323846137288}, {latitude: 34.1855072220748, longitude: -117.323954064160}] },
       { latlng: [{latitude: 34.1853998579560, longitude: -117.325253087592}, {latitude: 34.1850981053297, longitude: -117.324690314882}, {latitude: 34.1848916993224, longitude: -117.324259939487}, {latitude: 34.184604411424, longitude: -117.323662532954}, {latitude: 34.1844473122685, longitude: -117.323423305105}] },
       { latlng: [{latitude: 34.1850981053297, longitude: -117.324690314882}, {latitude: 34.1851496693169, longitude: -117.324654024620}] },
       { latlng: [{latitude: 34.1848916993224, longitude: -117.324259939487}, {latitude: 34.1848105227300, longitude: -117.324308778622}] },
@@ -98,7 +98,17 @@ export const AuthMap = () => {
       { latlng: [{latitude: 34.1842470491104, longitude: -117.319438005601}, {latitude: 34.1849065773859, longitude: -117.320055078180}] },
       { latlng: [{latitude: 34.1812079466939, longitude: -117.319799450621}, {latitude: 34.1790704951081, longitude: -117.319371722381}] },
       { latlng: [{latitude: 34.1808286593154, longitude: -117.320397858995}, {latitude: 34.1806758349195, longitude: -117.321277101236}] },
-      { latlng: [{latitude: 34.1798820188375, longitude: -117.323188712290}, {latitude: 34.1787105531865, longitude: -117.323175301245}, {latitude: 34.1784998901228, longitude: -117.322874893836}, {latitude: 34.1786220026474, longitude: -117.322374661854}, {latitude: 34.1790126783278, longitude: -117.322259326867}, {latitude: 34.1796873766541, longitude: -117.322573145322}] },
+      { latlng: [{latitude: 34.1787617938174, longitude: -117.322473295056}, {latitude: 34.1790126783278, longitude: -117.322259326867}, {latitude: 34.1796873766541, longitude: -117.322573145322}] },
+      { latlng: [{latitude: 34.1796873766541, longitude: -117.322573145322}, {latitude: 34.1798605922708, longitude: -117.322881599358}, {latitude: 34.1799496269009, longitude: -117.322919150284}] },
+      { latlng: [{latitude: 34.1798429101484, longitude: -117.323025097540}, {latitude: 34.1796188669365, longitude: -117.323155184677}, {latitude: 34.1795723385440, longitude: -117.323100199392}, {latitude: 34.1795036207072, longitude: -117.323168595722}, {latitude: 34.1793705534151, longitude: -117.323159207991}, {latitude: 34.1792019827192, longitude: -117.322857459476}] },
+      { latlng: [{latitude: 34.1792019827192, longitude: -117.322857459476}, {latitude: 34.1791665488526, longitude: -117.322762241056}, {latitude: 34.1792686898798, longitude: -117.322644223860}, {latitude: 34.1791073494410, longitude: -117.322369210059}, {latitude: 34.1790126783278, longitude: -117.322259326867}] },
+      { latlng: [{latitude: 34.1791073494410, longitude: -117.322369210059}, {latitude: 34.1792386853487, longitude: -117.322068955343}] },
+      { latlng: [{latitude: 34.1792386853487, longitude: -117.322068955343}, {latitude: 34.1793443249523, longitude: -117.322217357099}, {latitude: 34.1795470384157, longitude: -117.322224259507}, {latitude: 34.1795314904859, longitude: -117.322157345533}, {latitude: 34.1796983594160, longitude: -117.321765249424}, {latitude: 34.1795927202557, longitude: -117.321703127759}] },
+      { latlng: [{latitude: 34.1792386853487, longitude: -117.322068955343}, {latitude: 34.1791473212606, longitude: -117.321872236736}, {latitude: 34.1792072789546, longitude: -117.321861883126}, {latitude: 34.1792358302225, longitude: -117.321920553587}] },
+      { latlng: [{latitude: 34.1795314904859, longitude: -117.322157345533}, {latitude: 34.1800303526436, longitude: -117.322331747135}, {latitude: 34.1802700010626, longitude: -117.322148477655}, {latitude: 34.1802577741189, longitude: -117.322080490590}, {latitude: 34.1801990847646, longitude: -117.322092314427}] },
+      { latlng: [{latitude: 34.1787162704198, longitude: -117.322701282823}, {latitude: 34.1784236441854, longitude: -117.322611428821}] },
+      { latlng: [{latitude: 34.1798820188375, longitude: -117.323188712290}, {latitude: 34.1788198335134, longitude: -117.323156587803}, {latitude: 34.1786905592133, longitude: -117.322877085987}, {latitude: 34.1787162704198, longitude: -117.322701282823}, {latitude: 34.1787162704198, longitude: -117.322701282823}, {latitude: 34.17851280168180, longitude: -117.322200715565}, {latitude: 34.1780202966893, longitude: -117.321318444288}] },
+      { latlng: [{latitude: 34.1785128016818, longitude: -117.322200715560}, {latitude: 34.1782432209060, longitude: -117.322439132382}] },
       //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
       //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
       //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
@@ -109,25 +119,54 @@ export const AuthMap = () => {
       //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
     ],
     hydrants: [ 
-      {latlng: {latitude: 34.18686617, longitude: -117.3285637}, desc:'latitude: 34.18686617, longitude: -117.3285637'},
-      {latlng: {latitude: 34.18643578, longitude: -117.3295767}, desc:'latitude: 34.18643578, longitude: -117.3295767'},
-      {latlng: {latitude: 34.18615812, longitude: -117.3302469}, desc:'latitude: 34.18615812, longitude: -117.3302469'},
-      {latlng: {latitude: 34.18432277, longitude: -117.3300138}, desc:'latitude: 34.18432277, longitude: -117.3300138'},
-      {latlng: {latitude: 34.18685784, longitude: -117.3263629}, desc:'latitude: 34.18685784, longitude: -117.3263629'},
-      {latlng: {latitude: 34.18746009, longitude: -117.3255846}, desc:'latitude: 34.18746009, longitude: -117.3255846'},
-      {latlng: {latitude: 34.18676924, longitude: -117.3248209}, desc:'latitude: 34.18676924, longitude: -117.3248209'},
-      {latlng: {latitude: 34.18610736, longitude: -117.3258533}, desc:'latitude: 34.18610736, longitude: -117.3258533'},
-      {latlng: {latitude: 34.18636594, longitude: -117.3241667}, desc:'latitude: 34.18636594, longitude: -117.3241667'},
-      {latlng: {latitude: 34.18291630, longitude: -117.3297051}, desc:'latitude: 34.18291630, longitude: -117.3297051'},
-      {latlng: {latitude: 34.18469136, longitude: -117.3268660}, desc:'latitude: 34.18469136, longitude: -117.3268660'},
-      {latlng: {latitude: 34.18431346, longitude: -117.3261447}, desc:'latitude: 34.18431346, longitude: -117.3261447'},
-      {latlng: {latitude: 34.18411374, longitude: -117.3257477}, desc:'latitude: 34.18411374, longitude: -117.3257477'},
-      {latlng: {latitude: 34.18380963, longitude: -117.3268148}, desc:'latitude: 34.18380963, longitude: -117.3268148'},
-      {latlng: {latitude: 34.18412105, longitude: -117.3274686}, desc:'latitude: 34.18412105, longitude: -117.3274686'},
-      {latlng: {latitude: 34.18289903, longitude: -117.3276024}, desc:'latitude: 34.18289903, longitude: -117.3276024'},
-      {latlng: {latitude: 34.18325905, longitude: -117.3265918}, desc:'latitude: 34.18325905, longitude: -117.3265918'},
-      {latlng: {latitude: 34.18248339, longitude: -117.3261904}, desc:'latitude: 34.18248339, longitude: -117.3261904'},
-      {latlng: {latitude: 34.18157571, longitude: -117.3259779}, desc:'latitude: 34.18157571, longitude: -117.3259779'},
+      {latlng: {latitude: 34.18686617, longitude: -117.3285637}, desc:'latitude: 34.18686617,\nlongitude: -117.3285637'},
+      {latlng: {latitude: 34.18643578, longitude: -117.3295767}, desc:'latitude: 34.18643578,\nlongitude: -117.3295767'},
+      {latlng: {latitude: 34.18615812, longitude: -117.3302469}, desc:'latitude: 34.18615812,\nlongitude: -117.3302469'},
+      {latlng: {latitude: 34.18432277, longitude: -117.3300138}, desc:'latitude: 34.18432277,\nlongitude: -117.3300138'},
+      {latlng: {latitude: 34.18685784, longitude: -117.3263629}, desc:'latitude: 34.18685784,\nlongitude: -117.3263629'},
+      {latlng: {latitude: 34.18746009, longitude: -117.3255846}, desc:'latitude: 34.18746009,\nlongitude: -117.3255846'},
+      {latlng: {latitude: 34.18676924, longitude: -117.3248209}, desc:'latitude: 34.18676924,\nlongitude: -117.3248209'},
+      {latlng: {latitude: 34.18610736, longitude: -117.3258533}, desc:'latitude: 34.18610736,\nlongitude: -117.3258533'},
+      {latlng: {latitude: 34.18636594, longitude: -117.3241667}, desc:'latitude: 34.18636594,\nlongitude: -117.3241667'},
+      {latlng: {latitude: 34.18291630, longitude: -117.3297051}, desc:'latitude: 34.18291630,\nlongitude: -117.3297051'},
+      {latlng: {latitude: 34.18469136, longitude: -117.3268660}, desc:'latitude: 34.18469136,\nlongitude: -117.3268660'},
+      {latlng: {latitude: 34.18431346, longitude: -117.3261447}, desc:'latitude: 34.18431346,\nlongitude: -117.3261447'},
+      {latlng: {latitude: 34.18411374, longitude: -117.3257477}, desc:'latitude: 34.18411374,\nlongitude: -117.3257477'},
+      {latlng: {latitude: 34.18380963, longitude: -117.3268148}, desc:'latitude: 34.18380963,\nlongitude: -117.3268148'},
+      {latlng: {latitude: 34.18412105, longitude: -117.3274686}, desc:'latitude: 34.18412105,\nlongitude: -117.3274686'},
+      {latlng: {latitude: 34.18289903, longitude: -117.3276024}, desc:'latitude: 34.18289903,\nlongitude: -117.3276024'},
+      {latlng: {latitude: 34.18325905, longitude: -117.3265918}, desc:'latitude: 34.18325905,\nlongitude: -117.3265918'},
+      {latlng: {latitude: 34.18248339, longitude: -117.3261904}, desc:'latitude: 34.18248339,\nlongitude: -117.3261904'},
+      {latlng: {latitude: 34.18157571, longitude: -117.3259779}, desc:'latitude: 34.18157571,\nlongitude: -117.3259779'},
+      {latlng: {latitude: 34.18563749, longitude: -117.3247277}, desc:'latitude: 34.18563749,\nlongitude: -117.3247277'},
+      {latlng: {latitude: 34.18419235, longitude: -117.3234887}, desc:'latitude: 34.18419235,\nlongitude: -117.3234887'},
+      {latlng: {latitude: 34.18406006, longitude: -117.3247243}, desc:'latitude: 34.18406006,\nlongitude: -117.3247243'},
+      {latlng: {latitude: 34.18243248, longitude: -117.3234954}, desc:'latitude: 34.18243248,\nlongitude: -117.3234954'},
+      {latlng: {latitude: 34.18169844, longitude: -117.3234345}, desc:'latitude: 34.18169844,\nlongitude: -117.3234345'},
+      {latlng: {latitude: 34.18132502, longitude: -117.3239608}, desc:'latitude: 34.18132502,\nlongitude: -117.3239608'},
+      {latlng: {latitude: 34.18103381, longitude: -117.3242954}, desc:'latitude: 34.18103381,\nlongitude: -117.3242954'},
+      {latlng: {latitude: 34.18087897, longitude: -117.3233436}, desc:'latitude: 34.18087897,\nlongitude: -117.3233436'},
+      {latlng: {latitude: 34.18022681, longitude: -117.3224826}, desc:'latitude: 34.18022681,\nlongitude: -117.3224826'},
+      {latlng: {latitude: 34.17985245, longitude: -117.3216963}, desc:'latitude: 34.17985245,\nlongitude: -117.3216963'},
+      {latlng: {latitude: 34.17941236, longitude: -117.3224117}, desc:'latitude: 34.17941236,\nlongitude: -117.3224117'},
+      {latlng: {latitude: 34.17893876, longitude: -117.3222319}, desc:'latitude: 34.17893876,\nlongitude: -117.3222319'},
+      {latlng: {latitude: 34.17858257, longitude: -117.3211663}, desc:'latitude: 34.17858257,\nlongitude: -117.3211663'},
+      {latlng: {latitude: 34.17845112, longitude: -117.3226564}, desc:'latitude: 34.17845112,\nlongitude: -117.3226564'},
+      {latlng: {latitude: 34.17856251, longitude: -117.3231128}, desc:'latitude: 34.17856251,\nlongitude: -117.3231128'},
+      {latlng: {latitude: 34.17800794, longitude: -117.3229427}, desc:'latitude: 34.17800794,\nlongitude: -117.3229427'},
+      {latlng: {latitude: 34.17820031, longitude: -117.3224497}, desc:'latitude: 34.17820031,\nlongitude: -117.3224497'},
+      {latlng: {latitude: 34.17763562, longitude: -117.3222919}, desc:'latitude: 34.17763562,\nlongitude: -117.3222919'},
+      {latlng: {latitude: 34.17767414, longitude: -117.3212410}, desc:'latitude: 34.17767414,\nlongitude: -117.3212410'},
+      {latlng: {latitude: 34.18365703, longitude: -117.3223721}, desc:'latitude: 34.18365703,\nlongitude: -117.3223721'},
+      {latlng: {latitude: 34.18317789, longitude: -117.3214020}, desc:'latitude: 34.18317789,\nlongitude: -117.3214020'},
+      {latlng: {latitude: 34.18265049, longitude: -117.3215323}, desc:'latitude: 34.18265049,\nlongitude: -117.3215323'},
+      {latlng: {latitude: 34.18208771, longitude: -117.3219425}, desc:'latitude: 34.18208771,\nlongitude: -117.3219425'},
+      {latlng: {latitude: 34.18458266, longitude: -117.3204325}, desc:'latitude: 34.18458266,\nlongitude: -117.3204325'},
+      {latlng: {latitude: 34.18232498, longitude: -117.3189607}, desc:'latitude: 34.18232498,\nlongitude: -117.3189607'},
+      {latlng: {latitude: 34.18192512, longitude: -117.3192667}, desc:'latitude: 34.18192512,\nlongitude: -117.3192667'},
+      {latlng: {latitude: 34.18094485, longitude: -117.3200776}, desc:'latitude: 34.18094485,\nlongitude: -117.3200776'},
+      {latlng: {latitude: 34.18091934, longitude: -117.3187368}, desc:'latitude: 34.18091934,\nlongitude: -117.3187368'},
+      {latlng: {latitude: 34.18092708, longitude: -117.3183117}, desc:'latitude: 34.18092708,\nlongitude: -117.3183117'},
     ]
   }
     return(
@@ -149,10 +188,15 @@ export const AuthMap = () => {
               { latitude: 34.176092, longitude: -117.313079 })}}
             minZoomLevel = {14.5}
           >
+            <UrlTile
+              urlTemplate={'https://services3.arcgis.com/qiSp6GCVYPtO9fVw/arcgis/rest/services/CSUSB_WATER/MapServer/{z}/{x}/{y}.png'}
+            />
             {this.state.hydrants.map((hydrant, index) => (
               <Marker
               key = {index}
               coordinate={hydrant.latlng}
+              description={hydrant.desc}
+              image={require('../../../assets/highflowrate.png')}
               />
             ))}
             {this.state.polylines.map( (polyline, index)  => (
@@ -160,7 +204,7 @@ export const AuthMap = () => {
                 key = { index }
                 coordinates = {polyline.latlng}
                 strokeColor="#0065BD"
-                strokeWidth={4}
+                strokeWidth={2}
                 lineDashPattern={[1]}
                 lineCap = 'square'
               />

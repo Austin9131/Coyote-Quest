@@ -1,12 +1,9 @@
-import MapView from 'react-native-maps';
-import Marker from 'react-native-maps';
+import MapView, { Marker }from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
-import { maps, text, styles } from '../../../styles';
-import { TextInput } from 'react-native-gesture-handler';
+import { View } from 'react-native';
+import { maps, styles } from '../../../styles';
 import SearchableDropdown from 'react-native-searchable-dropdown';
-import { back } from 'react-native/Libraries/Animated/src/Easing';
 
 export const MainMap = () => {
   const [ search, setSearch ] = useState('');
@@ -100,7 +97,7 @@ export const MainMap = () => {
             { latitude: 34.176092, longitude: -117.313079 })}}
           minZoomLevel = {14.5}
         >
-          <MapView.Marker
+          <Marker
             key = { 0 }
             title = {findmarkername(search)}
             coordinate={search === '' ? { latitude: 100, longitude: 100 } : { latitude: findmarkerlat(search), longitude: findmarkerlong(search) }}
