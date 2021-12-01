@@ -1,4 +1,5 @@
-import MapView, { Marker, Polyline, UrlTile } from 'react-native-maps';
+import MapView from 'react-native-maps';
+import  Polyline  from 'react-native-maps';
 import * as React from 'react';
 import { useState } from 'react';
 import { maps, styles } from '../../../styles';
@@ -149,17 +150,10 @@ export const AuthMap = () => {
               { latitude: 34.176092, longitude: -117.313079 })}}
             minZoomLevel = {14.5}
           >
-            {this.state.hydrants.map( (hydrant, index) => (
-            <MapView.Marker
-              key = {index}
-              title = 'hydrant'
-              coordinate = {hydrant.latlng}
-            />
-            ))}
             {this.state.polylines.map( (polyline, index)  => (
               <MapView.Polyline
-                key = {index}
-                coordinates = {polyline.latlng}
+                key = { index }
+                coordinates = {polyline.latling}
                 strokeColor="#0065BD"
                 strokeWidth={4}
                 lineDashPattern={[1]}
