@@ -14,7 +14,7 @@ export const AuthMap = () => {
       { latlng: [{latitude: 34.1870104300000, longitude: -117.327936500000}, {latitude: 34.1867880658777, longitude: -117.328550709639}, {latitude: 34.1865597225508, longitude: -117.329118577078}, {latitude: 34.1864002295336, longitude: -117.329575270922}, {latitude: 34.1861980000000, longitude: -117.330062200000}] },
       { latlng: [{latitude: 34.1867880658777, longitude: -117.328550709639}, {latitude: 34.1870591490249, longitude: -117.328753669741}] },
       { latlng: [{latitude: 34.1864002295336, longitude: -117.329575270922}, {latitude: 34.1865744218195, longitude: -117.329689444384}] },
-      { latlng: [{latitude: 34.1865597225508, longitude: -117.329118577078}, {latitude:34.18616056577760, longitude: -117.328857557880}] },
+      { latlng: [{latitude: 34.1865597225508, longitude: -117.329118577078}, {latitude: 34.1861605657776, longitude: -117.328857557880}] },
       { latlng: [{latitude: 34.1861980000000, longitude: -117.330062200000}, {latitude: 34.1824202456658, longitude: -117.329512762842}] },
       { latlng: [{latitude: 34.1870104300000, longitude: -117.327936500000}, {latitude: 34.1862948987465, longitude: -117.327189138634}, {latitude: 34.1855037971463, longitude: -117.326365390507}, {latitude: 34.1848680979437, longitude: -117.326944121902}, {latitude: 34.1843573677102, longitude: -117.327234564374}] },
       { latlng: [{latitude: 34.1843573677102, longitude: -117.327234564374}, {latitude: 34.1841135117157, longitude: -117.327486196221}, {latitude: 34.1830670086610, longitude: -117.328071225152}, {latitude: 34.1828632252530, longitude: -117.327612740726}, {latitude: 34.1827388235074, longitude: -117.327348823221}] },
@@ -137,9 +137,6 @@ export const AuthMap = () => {
       { latlng: [{latitude: 34.1805116542649, longitude: -117.325734280670}, {latitude: 34.1809732408032, longitude: -117.326472407673}, {latitude: 34.1815933772286, longitude: -117.327163294777}, {latitude: 34.1825406781554, longitude: -117.327834764595}, {latitude: 34.1830914290880, longitude: -117.328073586584}] },
       { latlng: [{latitude: 34.1849065773859, longitude: -117.320055078180}, {latitude: 34.1852473377398, longitude: -117.320666339157}, {latitude: 34.1855632578404, longitude: -117.321689397003}, {latitude: 34.1858614347651, longitude: -117.322691007095}, {latitude: 34.1862589653961, longitude: -117.323868488767}, {latitude: 34.1864167526994, longitude: -117.324207627292}] },
       { latlng: [{latitude: 34.1864167526994, longitude: -117.324207627292}, {latitude: 34.1869313764742, longitude: -117.325050524007}, {latitude: 34.1875404913909, longitude: -117.325602592277}, {latitude: 34.1876080204868, longitude: -117.325681948965}] },
-      //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
-      //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
-      //{ latlng: [{latitude: , longitude: }, {latitude: , longitude: }] },
     ],
     hydrants: [ 
       {latlng: {latitude: 34.18686617, longitude: -117.3285637}, desc:'latitude: 34.18686617,\nlongitude: -117.3285637\nStatus: Good'},
